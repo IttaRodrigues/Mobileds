@@ -1,7 +1,6 @@
 import { Text, SafeAreaView, StyleSheet } from 'react-native';
 
 // You can import supported modules from npm
-import { Card } from 'react-native-paper';
 
 // or any files within the Snack
 import Hora_extra from './components/Hora_extra';
@@ -9,12 +8,8 @@ import Hora_extra from './components/Hora_extra';
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.paragraph}>
-        Change code in the editor and watch it change on your phone! Save to get a shareable url.
-      </Text>
-      <Card>
-        <AssetExample />
-      </Card>
+      <Hora_extra />
+
     </SafeAreaView>
   );
 }

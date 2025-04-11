@@ -1,43 +1,95 @@
-import { Text, SafeAreaView, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { SafeAreaView, View, Text, TextInput, Image, Button, StyleSheet } from 'react-native';
 
-export default function App() {
+const Hora_extra = () => {
+  const [salario, setsalario] = useState(0);
+  const [horas, sethoras] = useState(0);
+  const [horaextra, sethoraextra] = useState(0);
+  const [resultadohoras, setResultadohoras] = useState(0);
+  const [resultado, setResultado] = useState(0);
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.paragraph}>
-      Crie um aplicativo que receba:
-      Salário base do funcionário
-      Quantidade de horas trabalhadas no mês
-O sistema deve calcular o salário final considerando que:
-     A jornada normal é de 160 horas/mês
-     Horas acima de 160 são consideradas hora extra e pagas com acréscimo de 50% sobre o valor da hora normal
-Exemplo: 
-      Salário base: R$ 2.000,00
-      Horas trabalhadas: 170
-      Salário final: R$ 2.187,50
+      <Text style={styles.paragraph}>Hora_extra</Text>
+          <View>
+            <Image style={styles.image} source={require('..')} />
+          </View>
+        <Text>Digite o salario: </Text>
+        <TextInput
+          value={salario}
+          onChangeText={text => setsalario(text)}
+          placeholder="Salário"
+          style={styles.input}
+        />
+        
+        <Text>Digite as horas</Text>
+        <TextInput
+          value={horas}
+          onChangeText={text => sethoras(text)}
+          placeholder="Digite as horas"
+          style={styles.input}
+        />
 
+          <Text>Digite as horas extra</Text>
+        <TextInput
+          value={horaextra}
+          onChangeText={text => sethoraextra(text)}
+          placeholder="Digite as horas extras"
+          style={styles.input}
+        />
 
-      
+        <Button
+          title="Salário final"
+          color="green"
+          onPress={() => setResultado(Number(salario) / Number(horas))}
+        />
 
+        <Button
+          title="Salário final"
+          color="green"
+          onPress={() => setResultado(Number(resultadohoras) * Number(10))}
+        />
 
-
-
-
-      </Text>
+          <Button
+          title="Salário final"
+          color="green"
+          onPress={() => setResultado(Number(resultadofinal) + Number(0.5))}
+        />
+       
+      <Text>Resultado: {resultado}</Text>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    padding: 8,
+    alignItems: 'center',
+    backgroundColor: 'blanchedalmond',
+    padding: 20,
   },
   paragraph: {
-    margin: 24,
-    fontSize: 18,
+    fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
+    marginBottom: 20,
+  },
+  input: {
+    height: 40,
+    borderColor: 'black',
+    borderWidth: 3,
+    marginBottom: 12,
+    paddingLeft: 8,
+    width: 200,
+    textAlign: 'center',
+  },
+  image: {
+    width: 200,
+    height: 200,
+    alignSelf: 'center',
+    marginBottom: 20,
   },
 });
+
+export default Hora_extra;
