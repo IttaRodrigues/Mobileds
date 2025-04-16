@@ -4,12 +4,17 @@ import { Text, SafeAreaView, StyleSheet } from 'react-native';
 
 // or any files within the Snack
 import Hora_extra from './components/Hora_extra';
+// import Simulador_pedagio from './components/Simulador_pedagio';
+// import Consumo_energia from './components/Consumo_energia';
+// import Tabuleiro from './components/Tabuleiro';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Hora_extra />
-
+      {/* <Simulador_pedagio/>
+      <Consumo_energia/>
+      <Tabuleiro/> */}
     </SafeAreaView>
   );
 }
@@ -27,4 +32,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  
 });
